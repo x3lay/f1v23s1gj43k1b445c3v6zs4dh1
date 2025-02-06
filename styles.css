@@ -1,10 +1,11 @@
+/* Общие настройки */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #1a1a1a, #000033);
   color: #fff;
-  overflow: hidden; /* Убираем прокрутку */
+  overflow: auto; /* Добавляем возможность прокрутки */
 }
 
 /* Снежинки */
@@ -17,7 +18,6 @@ body {
   filter: blur(1px);
   animation: snowfall linear infinite;
 }
-
 @keyframes snowfall {
   0% {
     transform: translateY(-10px);
@@ -38,7 +38,6 @@ body {
   color: transparent;
   animation: gradientAnimation 5s ease infinite;
 }
-
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -59,31 +58,26 @@ header {
   top: 0;
   z-index: 1000;
 }
-
 header h1 {
   margin: 0;
   font-size: 2.5rem;
   color: #00bfff;
 }
-
 nav ul {
   list-style: none;
   padding: 0;
   margin: 10px 0 0 0;
 }
-
 nav ul li {
   display: inline;
   margin-right: 20px;
 }
-
 nav ul li a {
   color: #fff;
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.3s ease;
 }
-
 nav ul li a:hover {
   color: #00bfff;
 }
@@ -95,14 +89,12 @@ section {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
 section h2 {
   color: #00bfff;
   border-bottom: 2px solid #00bfff;
   padding-bottom: 10px;
   font-size: 2rem;
 }
-
 .content {
   max-width: 800px;
   margin: 0 auto;
@@ -114,18 +106,17 @@ section h2 {
   background-color: #00bfff;
   color: #000;
   padding: 10px 20px;
-  border-radius: 25px; /* Закруглённые углы */
+  border-radius: 25px;
   text-decoration: none;
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
   margin-top: 20px;
   transition: background-color 0.3s ease;
-  float: right; /* Кнопка справа */
+  float: right;
 }
-
 .buy-button:hover {
-  background-color: #0099cc; /* Изменение цвета при наведении */
+  background-color: #0099cc;
 }
 
 .product-grid {
@@ -133,7 +124,6 @@ section h2 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
-
 .product-card {
   background: rgba(0, 0, 0, 0.6);
   padding: 20px;
@@ -141,17 +131,14 @@ section h2 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .product-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 191, 255, 0.3);
 }
-
 .product-card h3 {
   color: #00bfff;
   margin-top: 0;
 }
-
 .product-card .status {
   display: inline-block;
   padding: 5px 10px;
@@ -159,19 +146,15 @@ section h2 {
   font-size: 0.9em;
   margin-left: 10px;
 }
-
 .product-card .status.undetected {
-  background-color: #2e3a23; /* Зелёный */
+  background-color: #2e3a23;
 }
-
 .product-card .status.detected {
-  background-color: #f44336; /* Красный */
+  background-color: #f44336;
 }
-
 .product-card p {
   color: #ccc;
 }
-
 .product-card button {
   background: #00bfff;
   color: #000;
@@ -181,7 +164,6 @@ section h2 {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 .product-card button:hover {
   background: #0099cc;
 }
@@ -191,12 +173,11 @@ footer {
   color: #fff;
   text-align: center;
   padding: 10px;
-  position: fixed;
-  bottom: 0;
+  position: relative; /* Изменено с fixed на relative */
   width: 100%;
 }
 
-/* Стили для модальных окон */
+/* Модальные окна */
 .modal {
   display: none;
   position: fixed;
@@ -211,12 +192,10 @@ footer {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
 .modal.active {
   display: flex;
   opacity: 1;
 }
-
 .modal-content {
   background: #1a1a1a;
   padding: 20px;
@@ -227,12 +206,10 @@ footer {
   color: #fff;
   position: relative;
 }
-
 .modal-content h2 {
   color: #00bfff;
   margin-top: 0;
 }
-
 .close {
   position: absolute;
   top: 10px;
@@ -242,7 +219,34 @@ footer {
   cursor: pointer;
   transition: color 0.3s ease;
 }
-
 .close:hover {
   color: #00bfff;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+  section h2 {
+    font-size: 1.8rem;
+  }
+  .buy-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  .product-card {
+    padding: 15px;
+  }
+  .product-card h3 {
+    font-size: 1.2rem;
+  }
+  .product-card button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
 }
